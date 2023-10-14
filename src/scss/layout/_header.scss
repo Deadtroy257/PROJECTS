@@ -1,0 +1,36 @@
+.no-webp .inicio{// 
+    background-image: url(../img/header.jpg);
+}
+.webp .inicio{
+    background-image: url(../img/header.webp);
+}
+.header{
+    background-color: $grisOscuro;
+    padding: 1rem 0 3rem 0;
+    &.inicio {//seudoclass asigns height to the picture
+        background-position: center center;//centers the image vertically and horizontally
+        background-size: cover;//takes all space
+        
+        @include tablet{
+            min-height: 70rem;
+        }
+        .contenido-header{//only affects the main page
+            @include tablet{
+                min-height: 70rem;
+            }
+        }
+    }
+} 
+
+.contenido-header{
+    display: flex;//allows access to the following properties
+    flex-direction: column;//arrange content from top to bottom
+    justify-content: space-between;//allows put content in bottom
+    h1{
+        text-align: left;
+        color: $blanco;
+        font-weight: bold;
+        line-height: 2;
+        max-width: 60rem;
+    }
+}

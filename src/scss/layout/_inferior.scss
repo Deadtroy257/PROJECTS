@@ -1,0 +1,44 @@
+@include tablet{
+    .seccion-inferior{
+        display: grid;
+        grid-template-columns: 2fr 1fr;//column 1 = 2fr / column 2 = 1fr
+        column-gap: 2rem;
+    }
+}
+.entrada-blog{
+    margin-bottom: 2rem;
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+    }
+}
+.texto-entrada{
+    a{//all (a) have default display-inline, for declare margin, the display has to be changed to block
+        color: $negro;
+        //margin-top: 2rem;
+        display: block;
+        @include tablet { 
+            margin-top: 0;
+        }
+    }
+    h4{
+        margin: 0;
+        line-height: 1.4;
+
+        &::after{//we use this seudoelement to create the green line
+            content: '';
+            margin-top: 1rem;
+            display: block;
+            width: 15rem;
+            height: 0.5rem;
+            background-color: $verde;
+        }
+    }
+    span{
+        color: $amarillo;
+    }
+}
